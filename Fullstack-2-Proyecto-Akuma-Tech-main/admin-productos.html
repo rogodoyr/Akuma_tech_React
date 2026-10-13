@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Productos - Admin AkumaTech</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACION ADMIN -->
+    <header class="admin-header">
+
+        <nav>
+
+            <!-- LOGO CON VIDEO -->
+            <div class="logo-container">
+                <span class="logo-text neon-glow">Akuma</span>
+                <a href="index.html" class="logo-video-link">
+                    <video class="logo-video" autoplay loop muted playsinline>
+                        <source src="img/cara akuma.webm" type="video/webm">
+                    </video>
+                </a>
+                <span class="logo-text neon-glow">Tech</span>
+            </div>
+
+            <div class="admin-badge">ADMIN</div>
+
+            <ul>
+
+                <li>
+                    <a href="admin.html"><strong>Panel Admin</strong></a>
+                </li>
+
+                <li>
+                    <a href="admin-usuarios.html"><strong>Usuarios</strong></a>
+                </li>
+
+                <li>
+                    <a href="admin-productos.html"><strong>Productos</strong></a>
+                </li>
+
+                <li>
+                    <a href="index.html"><strong>Ver Tienda</strong></a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="cerrarSesionAdmin()"><strong>Cerrar Sesión</strong></a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <section class="admin-panel">
+
+            <h1>Gestión de Productos</h1>
+
+            <!-- FORMULARIO PARA CREAR/EDITAR PRODUCTO -->
+            <div class="admin-formulario">
+
+                <h2 id="titulo-formulario-producto">Agregar Nuevo Producto</h2>
+
+                <form id="admin-producto-form">
+
+                    <input type="hidden" id="producto-editando" value="">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="admin-producto-nombre">Nombre del producto:</label>
+                            <input type="text" id="admin-producto-nombre" maxlength="200" required placeholder="Nombre del producto">
+                            <p id="error-admin-producto-nombre" class="mensaje-error"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="admin-producto-precio">Precio ($):</label>
+                            <input type="number" id="admin-producto-precio" min="1" required placeholder="Ej: 39990">
+                            <p id="error-admin-producto-precio" class="mensaje-error"></p>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="admin-producto-imagen">URL de imagen:</label>
+                            <input type="text" id="admin-producto-imagen" required placeholder="URL o ruta de la imagen">
+                            <p id="error-admin-producto-imagen" class="mensaje-error"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="admin-producto-categoria">Categoría:</label>
+                            <select id="admin-producto-categoria" required>
+                                <option value="">Seleccionar categoría</option>
+                                <option value="perifericos">Periféricos</option>
+                                <option value="componentes">Componentes</option>
+                                <option value="monitores">Monitores</option>
+                                <option value="accesorios">Accesorios</option>
+                            </select>
+                            <p id="error-admin-producto-categoria" class="mensaje-error"></p>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="admin-producto-descripcion">Descripción:</label>
+                        <textarea id="admin-producto-descripcion" maxlength="500" rows="3" required placeholder="Descripción del producto"></textarea>
+                        <p id="error-admin-producto-descripcion" class="mensaje-error"></p>
+                    </div>
+
+                    <div class="form-buttons">
+
+                        <button type="submit" class="btn-primary">Guardar Producto</button>
+
+                        <button type="button" class="btn-secondary" onclick="cancelarEdicionProducto()">Cancelar</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- TABLA DE PRODUCTOS -->
+            <div class="admin-tabla-container">
+
+                <h2>Productos en Tienda</h2>
+
+                <table class="admin-tabla" id="tabla-productos">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Categoría</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody-productos">
+                        <!-- Los productos se cargarán dinámicamente -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-contenido">
+
+            <div class="footer-seccion">
+                <h3>Nosotros</h3>
+                <p>AkumaTech es tu tienda gamer de confianza. Ofrecemos los mejores componentes, periféricos y accesorios para armar tu setup gamer ideal.</p>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>Contacto</h3>
+                <p>📧 info@akumatech.com</p>
+                <p>📞 +569 12345678</p>
+                <p>📍 Santiago, Chile</p>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>Enlaces útiles</h3>
+                <a href="index.html">Inicio</a>
+                <a href="admin.html">Panel Admin</a>
+                <a href="admin-usuarios.html">Usuarios</a>
+                <a href="admin-productos.html">Productos</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <small>&copy; 2026 AkumaTech - Tienda de Tecnología. Todos los derechos reservados.</small>
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="body.js"></script>
+    <script src="admin.js"></script>
+    <script src="admin-productos.js"></script>
+
+</body>
+
+</html>

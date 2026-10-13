@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrador - AkumaTech</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACION ADMIN -->
+    <header class="admin-header">
+
+        <nav>
+
+            <!-- LOGO CON VIDEO -->
+            <div class="logo-container">
+                <span class="logo-text neon-glow">Akuma</span>
+                <a href="index.html" class="logo-video-link">
+                    <video class="logo-video" autoplay loop muted playsinline>
+                        <source src="img/cara akuma.webm" type="video/webm">
+                    </video>
+                </a>
+                <span class="logo-text neon-glow">Tech</span>
+            </div>
+
+            <div class="admin-badge">ADMIN</div>
+
+            <ul>
+
+                <li>
+                    <a href="admin.html"><strong>Panel Admin</strong></a>
+                </li>
+
+                <li>
+                    <a href="admin-usuarios.html"><strong>Usuarios</strong></a>
+                </li>
+
+                <li>
+                    <a href="admin-productos.html"><strong>Productos</strong></a>
+                </li>
+
+                <li>
+                    <a href="index.html"><strong>Ver Tienda</strong></a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="cerrarSesionAdmin()"><strong>Cerrar Sesión</strong></a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <section class="admin-panel">
+
+            <h1>Panel de Administración</h1>
+
+            <div class="admin-stats">
+
+                <div class="stat-card">
+                    <h3>Usuarios Registrados</h3>
+                    <p id="total-usuarios" class="stat-number">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Productos en Tienda</h3>
+                    <p id="total-productos" class="stat-number">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Carritos Activos</h3>
+                    <p id="total-carritos" class="stat-number">0</p>
+                </div>
+
+            </div>
+
+            <div class="admin-acciones">
+
+                <h2>Acciones Rápidas</h2>
+
+                <div class="acciones-grid">
+
+                    <a href="admin-usuarios.html" class="accion-card">
+                        <h3>Gestionar Usuarios</h3>
+                        <p>Crear, editar y eliminar usuarios del sistema</p>
+                    </a>
+
+                    <a href="admin-productos.html" class="accion-card">
+                        <h3>Gestionar Productos</h3>
+                        <p>Administrar el catálogo de productos</p>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-contenido">
+
+            <div class="footer-seccion">
+                <h3>Nosotros</h3>
+                <p>AkumaTech es tu tienda gamer de confianza. Ofrecemos los mejores componentes, periféricos y accesorios para armar tu setup gamer ideal.</p>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>Contacto</h3>
+                <p>📧 info@akumatech.com</p>
+                <p>📞 +569 12345678</p>
+                <p>📍 Santiago, Chile</p>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>Enlaces útiles</h3>
+                <a href="index.html">Inicio</a>
+                <a href="admin.html">Panel Admin</a>
+                <a href="admin-usuarios.html">Usuarios</a>
+                <a href="admin-productos.html">Productos</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <small>&copy; 2026 AkumaTech - Tienda de Tecnología. Todos los derechos reservados.</small>
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="body.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

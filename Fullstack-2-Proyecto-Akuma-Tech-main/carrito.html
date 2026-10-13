@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - AkumaTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- LOGO CON VIDEO -->
+            <div class="logo-container">
+                <span class="logo-text neon-glow">Akuma</span>
+                <a href="index.html" class="logo-video-link">
+                    <video class="logo-video" autoplay loop muted playsinline>
+                        <source src="img/cara akuma.webm" type="video/webm">
+                    </video>
+                </a>
+                <span class="logo-text neon-glow">Tech</span>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.html"><strong>Inicio</strong></a>
+                </li>
+                
+                <li>
+                    <a href="index.html#productos"><strong>Productos</strong></a>
+                </li>
+                <li>
+                    <a href="login.html"><strong>Iniciar Sesión</strong></a>
+                </li>
+
+                <li>
+                    <a href="registro.html"><strong>Registro</strong></a>
+                </li>
+
+                <li>
+                    <a href="carrito.html"><strong>Carrito</strong>
+                        <span id="cantidad-carrito">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="carrito-page">
+            
+            <h1>Mi Carrito</h1>
+
+            <div class="carrito-layout">
+                
+                <!-- LISTA DE PRODUCTOS -->
+                <div class="carrito-productos">
+                    
+                    <div id="contenedor-carrito">
+                        <!-- Aquí se mostrarán los productos agregados al carrito -->
+                    </div>
+
+                    <div class="carrito-acciones">
+                        <a href="index.html" class="btn-seguir-comprando">← Seguir comprando</a>
+                        <button class="btn-vaciar-carrito" onclick="vaciarCarrito()">Vaciar carrito</button>
+                    </div>
+
+                </div>
+
+                <!-- RESUMEN DE COMPRA -->
+                <div class="carrito-resumen">
+                    
+                    <h2>Resumen de compra</h2>
+
+                    <div class="resumen-detalle">
+                        <div class="resumen-linea">
+                            <span>Subtotal (<span id="cantidad-items">0</span> productos)</span>
+                            <span id="subtotal-carrito">$0</span>
+                        </div>
+
+                        <div class="resumen-linea">
+                            <span>Envío</span>
+                            <span id="costo-envio">Gratis</span>
+                        </div>
+
+                        <div class="resumen-linea resumen-descuento" style="display: none;">
+                            <span>Descuento</span>
+                            <span id="descuento-carrito">-$0</span>
+                        </div>
+
+                        <div class="resumen-separador"></div>
+
+                        <div class="resumen-linea resumen-total">
+                            <span>Total</span>
+                            <span id="total-carrito">$0</span>
+                        </div>
+                    </div>
+
+                    <!-- CÓDIGO DE DESCUENTO -->
+                    <div class="codigo-descuento">
+                        <input type="text" id="codigo-descuento-input" placeholder="Código de descuento">
+                        <button onclick="aplicarDescuento()">Aplicar</button>
+                    </div>
+                    <p id="mensaje-descuento" class="mensaje-descuento"></p>
+
+                    <!-- SELECCIÓN DE ENVÍO -->
+                    <div class="envio-opciones">
+                        <h3>Método de envío</h3>
+                        
+                        <label class="envio-opcion">
+                            <input type="radio" name="envio" value="gratis" checked>
+                            <span class="envio-info">
+                                <strong>Envío estándar</strong>
+                                <span>5-7 días hábiles - Gratis</span>
+                            </span>
+                        </label>
+
+                        <label class="envio-opcion">
+                            <input type="radio" name="envio" value="express">
+                            <span class="envio-info">
+                                <strong>Envío express</strong>
+                                <span>2-3 días hábiles - $4.990</span>
+                            </span>
+                        </label>
+
+                        <label class="envio-opcion">
+                            <input type="radio" name="envio" value="same-day">
+                            <span class="envio-info">
+                                <strong>Envío mismo día</strong>
+                                <span>Hoy antes de las 20:00 - $9.990</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- MÉTODO DE PAGO -->
+                    <div class="pago-opciones">
+                        <h3>Método de pago</h3>
+                        
+                        <label class="pago-opcion">
+                            <input type="radio" name="pago" value="tarjeta" checked>
+                            <span class="pago-info">
+                                <span class="pago-icono">💳</span>
+                                <strong>Tarjeta de crédito/débito</strong>
+                            </span>
+                        </label>
+
+                        <label class="pago-opcion">
+                            <input type="radio" name="pago" value="transferencia">
+                            <span class="pago-info">
+                                <span class="pago-icono">🏦</span>
+                                <strong>Transferencia bancaria</strong>
+                            </span>
+                        </label>
+
+                        <label class="pago-opcion">
+                            <input type="radio" name="pago" value="paypal">
+                            <span class="pago-info">
+                                <span class="pago-icono">🅿️</span>
+                                <strong>PayPal</strong>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- BOTÓN PAGAR -->
+                    <button class="btn-pagar" onclick="realizarPago()">
+                        <span class="btn-pagar-texto">Ir a pagar</span>
+                        <span class="btn-pagar-total" id="btn-total">$0</span>
+                    </button>
+
+                    <p class="pago-seguro">🔒 Pago seguro garantizado</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MODAL DE CONFIRMACIÓN -->
+        <div id="modal-pago" class="modal">
+            <div class="modal-contenido">
+                <div class="modal-icono">✅</div>
+                <h2>¡Pago exitoso!</h2>
+                <p>Tu pedido ha sido procesado correctamente.</p>
+                <p class="modal-numero-pedido">Número de pedido: <strong id="numero-pedido"></strong></p>
+                <p>Recibirás un correo con los detalles de tu compra.</p>
+                <button class="btn-primary" onclick="cerrarModal()">Continuar comprando</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-contenido">
+
+            <div class="footer-seccion">
+                <h3>Nosotros</h3>
+                <p>AkumaTech es tu tienda gamer de confianza. Ofrecemos los mejores componentes, periféricos y accesorios para armar tu setup gamer ideal.</p>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>Contacto</h3>
+                <p>📧 info@akumatech.com</p>
+                <p>📞 +569 12345678</p>
+                <p>📍 Santiago, Chile</p>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>Enlaces útiles</h3>
+                <a href="index.html">Inicio</a>
+                <a href="index.html#productos">Productos</a>
+                <a href="login.html">Iniciar Sesión</a>
+                <a href="registro.html">Registro</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <small>&copy; 2026 AkumaTech - Tienda de Tecnología. Todos los derechos reservados.</small>
+        </div>
+
+    </footer>
+
+    <script src="body.js"></script>
+    <script src="carrito.js"></script>
+    
+</body>
+</html>
