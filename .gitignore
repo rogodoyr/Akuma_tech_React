@@ -12,12 +12,6 @@ dist
 dist-ssr
 *.local
 
-# MiMoCode
-.mimocode
-
-# Proyecto JS original (solo referencia local)
-Fullstack-2-Proyecto-Akuma-Tech-main/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
