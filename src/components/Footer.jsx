@@ -6,8 +6,7 @@ function Footer({ navegar }) {
         <div className="footer-seccion">
           <h3>Nosotros</h3>
           <p>
-            AkumaTech es tu tienda gamer de confianza. Ofrecemos los mejores componentes,
-            periféricos y accesorios para armar tu setup gamer ideal.
+            AkumaTech es tu tienda gamer de confianza. Ofrecemos los mejores componentes.
           </p>
         </div>
 
