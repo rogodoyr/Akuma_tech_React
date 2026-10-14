@@ -13,9 +13,8 @@ function Inicio() {
 
       {/* PRODUCTOS DESTACADOS */}
       <section className="productos-destacados" id="productos">
-        <h2>
-          <strong>Productos Destacados</strong>
-        </h2>
+        
+        <h2><strong>Productos Destacados</strong></h2>
 
         <div className="contenedor-productos">
           {productos.map(function (producto) {

@@ -5,9 +5,8 @@ function Footer({ navegar }) {
       <div className="footer-contenido">
         <div className="footer-seccion">
           <h3>Nosotros</h3>
-          <p>
-            AkumaTech es tu tienda gamer de confianza. Ofrecemos los mejores componentes.
-          </p>
+          <p><strong>AkumaTech es tu tienda gamer de confianza. Ofrecemos los mejores componentes.</strong></p>
+
         </div>
 
         <div className="footer-seccion">

@@ -111,9 +111,10 @@ export const productos = [
 // Códigos de descuento de la tienda
 export const codigosDescuento = {
   AKUMA10: 10,
-  GAMER20: 20,
+  GAMER30: 30,
   BIENVENIDO15: 15,
   DESCUENTO5: 5,
+  CYBERAKUMA40: 40,
 }
 
 // Costos de envío
