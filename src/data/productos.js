@@ -7,6 +7,7 @@ import rtx5070 from '../assets/img/rtx20ti_transparente.png'
 import procesadorRyzen from '../assets/img/procesador_ryzen_56000x.png'
 import fuenteCorsair from '../assets/img/fuente.png'
 import gabineteExodia from '../assets/img/gabinete_exodia_white.png'
+import refrigeracionLiquida from '../assets/img/liquida.png'
 
 export const productos = [
   {
@@ -101,8 +102,7 @@ export const productos = [
     id: 12,
     nombre: 'Refrigeración Líquida XYZ AQUAPULSE AIO 240mm White',
     precio: 54990,
-    imagen:
-      'https://media.spdigital.cl/thumbnails/products/1763997187343-AP1_f31f7cf6_07c4fd48_thumbnail_512.jpg',
+    imagen: refrigeracionLiquida,
     descripcion:
       'Refrigeración líquida AIO de alto rendimiento en color blanco, con bloque de bomba y pantalla digital para temperatura en tiempo real.',
   },
