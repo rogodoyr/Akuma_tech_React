@@ -7,6 +7,7 @@ import rtx5070 from '../assets/img/rtx20ti_transparente.png'
 import procesadorRyzen from '../assets/img/procesador_ryzen_56000x.png'
 import fuenteCorsair from '../assets/img/fuente.png'
 import gabineteExodia from '../assets/img/gabinete_exodia_white.png'
+import fanLianLi from '../assets/img/Firefly_RemoveBackground.png'
 
 export const productos = [
   {
@@ -106,14 +107,22 @@ export const productos = [
     descripcion:
       'Refrigeración líquida AIO de alto rendimiento en color blanco, con bloque de bomba y pantalla digital para temperatura en tiempo real.',
   },
+  {
+    id: 13,
+    nombre: 'Lian Li UNI FAN SL V2 SL120 SL140 Evolution Actualización Versión ARGB Fan Kit L-Connect 3 Control 1/3 Pack',
+    precio: 35800,
+    imagen: fanLianLi,
+    descripcion: 'El ventilador Lian Li UNI FAN SL V2 ofrece un nivel máximo de ruido de 29.2 dB, ideal para entornos donde se requiere tranquilidad sin sacrificar el enfriamiento eficiente.',
+  }
 ]
 
 // Códigos de descuento de la tienda
 export const codigosDescuento = {
   AKUMA10: 10,
-  GAMER20: 20,
+  GAMER30: 30,
   BIENVENIDO15: 15,
   DESCUENTO5: 5,
+  CYBERAKUMA40: 40,
 }
 
 // Costos de envío
