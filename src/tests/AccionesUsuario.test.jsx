@@ -1,12 +1,8 @@
-// =============================================
+
 // Pruebas de ACCIONES DE USUARIO
 // Simulan clics y escritura en formularios
-// =============================================
-// fireEvent  → dispara un evento de forma directa
-// userEvent  → simula mejor la interacción real del usuario
-//
-// OJO: getByText('Iniciar Sesión') falla porque el título
-// y el botón tienen el mismo texto. Usamos getByRole('button').
+
+
 
 import { render, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'

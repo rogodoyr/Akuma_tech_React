@@ -8,6 +8,9 @@ import procesadorRyzen from '../assets/img/procesador_ryzen_56000x.png'
 import fuenteCorsair from '../assets/img/fuente.png'
 import gabineteExodia from '../assets/img/gabinete_exodia_white.png'
 import fanLianLi from '../assets/img/Firefly_RemoveBackground.png'
+import refrigeracionLiquida from '../assets/img/aquapulse_liquida_aio_white_xyz.png'
+import ssdSamsung from '../assets/img/SSD 980 PRO.png'
+
 
 export const productos = [
   {
@@ -102,8 +105,7 @@ export const productos = [
     id: 12,
     nombre: 'Refrigeración Líquida XYZ AQUAPULSE AIO 240mm White',
     precio: 54990,
-    imagen:
-      'https://media.spdigital.cl/thumbnails/products/1763997187343-AP1_f31f7cf6_07c4fd48_thumbnail_512.jpg',
+    imagen: refrigeracionLiquida,
     descripcion:
       'Refrigeración líquida AIO de alto rendimiento en color blanco, con bloque de bomba y pantalla digital para temperatura en tiempo real.',
   },
@@ -113,6 +115,14 @@ export const productos = [
     precio: 35800,
     imagen: fanLianLi,
     descripcion: 'El ventilador Lian Li UNI FAN SL V2 ofrece un nivel máximo de ruido de 29.2 dB, ideal para entornos donde se requiere tranquilidad sin sacrificar el enfriamiento eficiente.',
+  },
+
+  {
+    id: 14,
+    nombre: 'SSD NVMe Samsung 980 PRO 1TB',
+    precio: 129990,
+    imagen: ssdSamsung,
+    descripcion: 'SSD NVMe de alto rendimiento con capacidad de 1TB, ideal para sistemas de escritorio y portátiles.',
   }
 ]
 
