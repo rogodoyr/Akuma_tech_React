@@ -7,7 +7,9 @@ import rtx5070 from '../assets/img/rtx20ti_transparente.png'
 import procesadorRyzen from '../assets/img/procesador_ryzen_56000x.png'
 import fuenteCorsair from '../assets/img/fuente.png'
 import gabineteExodia from '../assets/img/gabinete_exodia_white.png'
-import refrigeracionLiquida from '../assets/img/liquida.png'
+import fanLianLi from '../assets/img/Firefly_RemoveBackground.png'
+import refrigeracionLiquida from '../assets/img/aquapulse_liquida_aio_white_xyz.png'
+import ssdSamsung from '../assets/img/SSD 980 PRO.png'
 
 export const productos = [
   {
@@ -106,6 +108,21 @@ export const productos = [
     descripcion:
       'Refrigeración líquida AIO de alto rendimiento en color blanco, con bloque de bomba y pantalla digital para temperatura en tiempo real.',
   },
+  {
+    id: 13,
+    nombre: 'Lian Li UNI FAN SL V2 SL120 SL140 Evolution Actualización Versión ARGB Fan Kit L-Connect 3 Control 1/3 Pack',
+    precio: 35800,
+    imagen: fanLianLi,
+    descripcion: 'El ventilador Lian Li UNI FAN SL V2 ofrece un nivel máximo de ruido de 29.2 dB, ideal para entornos donde se requiere tranquilidad sin sacrificar el enfriamiento eficiente.',
+  },
+
+  {
+    id: 14,
+    nombre: 'SSD NVMe Samsung 980 PRO 1TB',
+    precio: 129990,
+    imagen: ssdSamsung,
+    descripcion: 'SSD NVMe de alto rendimiento con capacidad de 1TB, ideal para sistemas de escritorio y portátiles.',
+  }
 ]
 
 // Códigos de descuento de la tienda

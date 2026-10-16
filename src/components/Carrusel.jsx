@@ -13,16 +13,9 @@ function Carrusel({ navegar }) {
       texto: 'En periféricos gamer seleccionados',
       boton: 'Ver ofertas',
     },
+    
     {
       id: 1,
-      imagen: '/img/Vulcan_II_XP_US_Heroshot_copy.webp',
-      badge: '🆕 Próximamente',
-      titulo: 'Turtle Beach Vulcan II XP',
-      texto: 'Lanzamiento previsto para el próximo 25 de octubre de 2026 a unos $120 USD',
-      boton: 'Más información',
-    },
-    {
-      id: 2,
       imagen: '/img/delivery.jpg',
       badge: '🚚 Envío gratis',
       titulo: 'Envío sin costo',
