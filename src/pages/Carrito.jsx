@@ -5,7 +5,7 @@ import { formatearPrecio } from '../utils/validaciones'
 import { opcionesEnvio } from '../data/productos'
 
 // Página del carrito de compras
-function Carrito({ navegar }) {
+function Carrito ({ navegar }) {
   const {
     carrito,
     subtotal,
