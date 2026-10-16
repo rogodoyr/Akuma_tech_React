@@ -60,7 +60,7 @@ function Admin({ navegar }) {
           </div>
         </div>
 
-        {/* ACCIONES RÁPIDAS */}
+        {/* ACCIONES RÁPIDAS | Panel de administracion */}
         <div className="admin-acciones">
           <h2>Acciones Rápidas</h2>
 

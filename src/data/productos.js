@@ -110,7 +110,7 @@ export const productos = [
   },
   {
     id: 13,
-    nombre: 'Lian Li UNI FAN SL V2 SL120 SL140 Evolution Actualización Versión ARGB Fan Kit L-Connect 3 Control 1/3 Pack',
+    nombre: 'Lian Li UNI FAN SL V2 SL120 SL140 Evolution Actualización Versión ARGB Fan Kit',
     precio: 35800,
     imagen: fanLianLi,
     descripcion: 'El ventilador Lian Li UNI FAN SL V2 ofrece un nivel máximo de ruido de 29.2 dB, ideal para entornos donde se requiere tranquilidad sin sacrificar el enfriamiento eficiente.',
