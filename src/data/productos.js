@@ -1,5 +1,5 @@
 // Catálogo de productos de AkumaTech
-// Las imágenes locales se importan para que Vite las procese
+// las imagenes se importan para que vite pueda procesarlas y optimizarlas correctamente
 
 import mouseLogitech from '../assets/img/mouse_logitech_whiteee.png'
 import tecladoAlloy from '../assets/img/teclado_alloy_pro_fps.png'
