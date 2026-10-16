@@ -125,6 +125,7 @@ function Header({ navegar }) {
           <li>
             <a
               href="#"
+              className="enlace-carrito"
               onClick={function (e) {
                 e.preventDefault()
                 navegar('carrito')

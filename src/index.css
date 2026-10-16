@@ -179,6 +179,14 @@ nav ul li a {
     transition: 0.3s;
 }
 
+.enlace-carrito {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
 
 
 /*efecto nav al pasar el mouse */
@@ -2349,5 +2357,4 @@ nav ul li a[href="#"] {
     }
 
 }
-
 
