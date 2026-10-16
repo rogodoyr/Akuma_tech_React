@@ -9,7 +9,7 @@ import fuenteCorsair from '../assets/img/fuente.png'
 import gabineteExodia from '../assets/img/gabinete_exodia_white.png'
 import fanLianLi from '../assets/img/Firefly_RemoveBackground.png'
 import refrigeracionLiquida from '../assets/img/aquapulse_liquida_aio_white_xyz.png'
-import ssdSamsung from '../assets/img/SSD 980 PRO.png'
+import ssdSamsung from '../assets/img/samsung 980 pro m.2.png'
 
 export const productos = [
   {
@@ -121,7 +121,7 @@ export const productos = [
     nombre: 'SSD NVMe Samsung 980 PRO 1TB',
     precio: 129990,
     imagen: ssdSamsung,
-    descripcion: 'SSD NVMe de alto rendimiento con capacidad de 1TB, ideal para sistemas de escritorio y portátiles.',
+    descripcion: 'SSD NVMe M.2 de alto rendimiento con capacidad de 1TB, ideal para sistemas de escritorio y portátiles.',
   }
 ]
 
