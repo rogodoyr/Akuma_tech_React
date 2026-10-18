@@ -23,7 +23,7 @@ export const productos = [
   {
     id: 2,
     nombre: 'Mouse Logitech G Pro Wireless',
-    precio: 29990,
+    precio: 133230,
     imagen: mouseLogitech,
     descripcion:
       'Mouse gamer inalámbrico de alta precisión, con sensor HERO y tecnología LIGHTSPEED, ideal para juegos competitivos.',
