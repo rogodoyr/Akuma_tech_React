@@ -286,10 +286,26 @@ function Carrito ({ navegar }) {
               </label>
 
               <label className="pago-opcion">
+                <input type="radio" name="pago" value="debito" />
+                <span className="pago-info">
+                  <span className="pago-icono">💳</span>
+                  Tarjeta de debito
+                </span>
+              </label>
+
+              <label className="pago-opcion">
                 <input type="radio" name="pago" value="transferencia" />
                 <span className="pago-info">
                   <span className="pago-icono">🏦</span>
                   Transferencia bancaria
+                </span>
+              </label>
+
+              <label className="pago-opcion">
+                <input type="radio" name="pago" value="efectivo" />
+                <span className="pago-info">
+                  <span className="pago-icono">💵</span>
+                  Efectivo
                 </span>
               </label>
             </div>
