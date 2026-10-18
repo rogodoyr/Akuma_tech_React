@@ -1,6 +1,7 @@
 import { useSesion } from '../context/SesionContext'
 import { useCarrito } from '../context/CarritoContext'
 
+
 // Encabezado con logo, navegación y contador del carrito
 function Header({ navegar }) {
   const { sesion, cerrarSesion, esAdmin } = useSesion()
