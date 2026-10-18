@@ -73,6 +73,18 @@ function Header({ navegar }) {
                   <strong>👤 {sesion.nombre}</strong>
                 </a>
               </li>
+              {/* mis pedidos */}
+              <li>
+                <a
+                href="#"
+                onClick={function (e) {
+                  e.preventDefault()
+                  navegar('mis-pedidos')
+                }}
+                >
+                  <strong>Mis Pedidos</strong>
+                </a>
+              </li>
 
               {esAdmin() ? (
                 <li>

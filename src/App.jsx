@@ -10,6 +10,7 @@ import Carrito from './pages/Carrito'
 import Admin from './pages/Admin'
 import AdminProductos from './pages/AdminProductos'
 import AdminUsuarios from './pages/AdminUsuarios'
+import MisPedidos from './pages/MisPedidos' // <-- 1. NUEVA IMPORTACIÓN
 import './App.css'
 
 // Componente principal: controla la navegación entre páginas
@@ -39,6 +40,9 @@ function App() {
     }
     if (pagina === 'admin-usuarios') {
       return <AdminUsuarios navegar={navegar} />
+    }
+    if (pagina === 'mis-pedidos') {
+      return <MisPedidos navegar={navegar} /> // <-- 2. NUEVA RUTA
     }
     return <Inicio />
   }

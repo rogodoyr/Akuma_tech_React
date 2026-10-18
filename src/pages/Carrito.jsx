@@ -68,6 +68,22 @@ function Carrito ({ navegar }) {
 
     // Generar número de pedido
     const numero = 'AK-' + Date.now().toString().slice(-8)
+    
+    // guardar el pedido en localstorage
+    const nuevoPedido = {
+      id: numero,
+      fecha: new Date().toLocaleString(),
+      total: Math.max(total, 0), // <--- CAMBIADO A Math CON M MAYÚSCULA
+      usuarioCorreo: sesion.correo,
+      productos: carrito
+    }
+
+    //obtener pedidos anteriores o crear un arreglo vacio
+    const pedidosGuardados = JSON.parse(localStorage.getItem('pedidos_akuma')) || []
+    pedidosGuardados.push(nuevoPedido)
+
+    // guardar los pedidos actualizados en localstorage
+    localStorage.setItem('pedidos_akuma', JSON.stringify(pedidosGuardados))
     setNumeroPedido(numero)
     setModalAbierto(true)
 
