@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useSesion } from '../context/SesionContext'
-import { formatearPrecio } from '../utils/validaciones' // Reutilizamos tu función para los precios
+import { useCarrito } from '../context/CarritoContext' // 1. Importamos el carrito
+import { formatearPrecio } from '../utils/validaciones'
 
 function MisPedidos({ navegar }) {
   const { sesion } = useSesion()
+  const { agregarAlCarrito } = useCarrito() // 2. Obtenemos la función para agregar productos
   const [misPedidos, setMisPedidos] = useState([])
 
   // Cargar los pedidos del usuario al entrar a la página
@@ -18,6 +20,17 @@ function MisPedidos({ navegar }) {
       setMisPedidos(pedidosDelUsuario.reverse())
     }
   }, [sesion])
+
+  // 3. Función para re-agregar todos los productos de un pedido anterior al carrito
+  function manejarVolverAComprar(productos) {
+    productos.forEach((producto) => {
+      for (let i = 0; i < producto.cantidad; i++) {
+        agregarAlCarrito(producto.id)
+      }
+    })
+    alert('¡Productos añadidos al carrito!')
+    navegar('carrito')
+  }
 
   // Si el usuario no ha iniciado sesión, mostrar acceso denegado
   if (!sesion) {
@@ -38,7 +51,7 @@ function MisPedidos({ navegar }) {
     <main>
       <section className="carrito-page">
         <h1>Mis Pedidos</h1>
-        
+
         {misPedidos.length === 0 ? (
           <div className="carrito-vacio" style={{ marginTop: '2rem' }}>
             <div className="carrito-vacio-icono">📦</div>
@@ -56,7 +69,7 @@ function MisPedidos({ navegar }) {
                   <h3 style={{ margin: 0, color: '#e50914' }}>Pedido: {pedido.id}</h3>
                   <span style={{ color: '#aaa' }}>Fecha: {pedido.fecha}</span>
                 </div>
-                
+
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1rem 0' }}>
                   {pedido.productos.map((producto, index) => (
                     <li key={index} style={{ display: 'flex', justifyContent: 'space-between', margin: '5px 0' }}>
@@ -65,9 +78,19 @@ function MisPedidos({ navegar }) {
                     </li>
                   ))}
                 </ul>
-                
-                <div style={{ textAlign: 'right', fontSize: '1.2rem' }}>
-                  <strong>Total pagado: {formatearPrecio(pedido.total)}</strong>
+
+                {/* 4. Pie de la tarjeta con el botón y el total */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #333', paddingTop: '1rem' }}>
+                  <button
+                    type="button"
+                    className="btn-primary"
+                    onClick={() => manejarVolverAComprar(pedido.productos)}
+                  >
+                    🔄 Volver a comprar
+                  </button>
+                  <div style={{ fontSize: '1.2rem' }}>
+                    <strong>Total pagado: {formatearPrecio(pedido.total)}</strong>
+                  </div>
                 </div>
               </div>
             ))}
