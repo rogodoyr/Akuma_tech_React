@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSesion } from '../context/SesionContext'
-import { useCarrito } from '../context/CarritoContext' // 1. Importamos el carrito
+import { useCarrito } from '../context/CarritoContext'
 import { formatearPrecio } from '../utils/validaciones'
 
 function MisPedidos({ navegar }) {
@@ -55,7 +55,7 @@ function MisPedidos({ navegar }) {
         {misPedidos.length === 0 ? (
           <div className="carrito-vacio" style={{ marginTop: '2rem' }}>
             <div className="carrito-vacio-icono">📦</div>
-            <h2>Aún no tienes pedidos registrados en tu historial.</h2>
+            <h2>Aún no registras pedidos en tu historial.</h2>
             <p>Tus futuras compras aparecerán aquí.</p>
             <button type="button" className="btn-primary" onClick={() => navegar('inicio')}>
               Ir a comprar
