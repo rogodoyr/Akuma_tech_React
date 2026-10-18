@@ -4,20 +4,21 @@ function Footer({ navegar }) {
     <footer>
       <div className="footer-contenido">
         <div className="footer-seccion">
-          <h3>Nosotros</h3>
-          <p><strong>AkumaTech es tu tienda gamer de confianza. Ofrecemos los mejores componentes.</strong></p>
+          <h3><strong>Nosotros</strong></h3>
+          <p><strong>AkumaTech es tu tienda gamer de confianza. 
+            Te ofrecemos los mejores productos y servicios con envios a todo el pais.</strong></p>
 
         </div>
 
         <div className="footer-seccion">
-          <h3>Contacto</h3>
+          <h3><strong>Contacto</strong></h3>
           <p>📧 info@akumatech.com</p>
           <p>📞 +569 12345678</p>
-          <p>📍 Santiago, Chile</p>
+          <p>📍 Santiago La Florida, Chile</p>
         </div>
 
         <div className="footer-seccion">
-          <h3>Enlaces útiles</h3>
+          <h3><strong>Enlaces útiles</strong></h3>
           <a
             href="#"
             onClick={function (e) {
@@ -25,7 +26,7 @@ function Footer({ navegar }) {
               navegar('inicio')
             }}
           >
-            Inicio
+            <strong>Inicio</strong>
           </a>
           <a
             href="#"

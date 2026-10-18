@@ -16,8 +16,8 @@ function ProductoCard({ producto }) {
         src={producto.imagen}
         alt={producto.nombre}
         className="imagen-producto"
-        width="200"
-        height="200"
+        width="300"
+        height="300"
       />
 
       <h3>{producto.nombre}</h3>
