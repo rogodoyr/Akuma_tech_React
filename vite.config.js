@@ -13,5 +13,16 @@ export default defineConfig({
     globals: true,
     setupFiles: './src/setupTests.js',
     include: ['src/**/*.{test,spec}.{js,jsx}'],
+    // Configuración explícita de coverage
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      reportsDirectory: './coverage',
+      exclude: [
+        'node_modules/',
+        'src/setupTests.js',
+        'dist/',
+      ],
+    },
   },
 })
