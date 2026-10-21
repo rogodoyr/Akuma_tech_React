@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom/vitest'
 import { vi } from 'vitest'
 
-// Simular localStorage durante las pruebas
+
+// Simulacion de localStorage durante las pruebas
 const storage = new Map()
 
 const localStorageMock = {
