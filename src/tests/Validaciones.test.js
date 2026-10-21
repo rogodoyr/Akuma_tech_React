@@ -11,6 +11,11 @@ import {
   validarCorreo,
   validarPassword,
   validarRut,
+  validarNombre,
+  confirmarPassword,
+  mensajeRut,
+  validarTelefono,
+  mensajeTelefono,
   formatearPrecio,
 } from '../utils/validaciones'
 
@@ -61,5 +66,76 @@ describe('formatearPrecio', () => {
   it('should format price in CLP', () => {
     expect(formatearPrecio(39990)).toBe('$39.990')
     expect(formatearPrecio(1000)).toBe('$1.000')
+  })
+})
+
+describe('validarNombre', () => {
+  it('should return error if name is empty', () => {
+    expect(validarNombre('')).toBe('El nombre es obligatorio.')
+  })
+
+  it('should return error if name is too long', () => {
+    expect(validarNombre('a'.repeat(101))).toBeTruthy()
+  })
+
+  it('should return empty string if name is valid', () => {
+    expect(validarNombre('Ana Pérez')).toBe('')
+  })
+})
+
+describe('confirmarPassword', () => {
+  it('should return error if confirmation is empty', () => {
+    expect(confirmarPassword('abcd', '')).toBe('Debe confirmar la contraseña.')
+  })
+
+  it('should return error if passwords do not match', () => {
+    expect(confirmarPassword('abcd', 'abce')).toBe('Las contraseñas no coinciden.')
+  })
+
+  it('should return empty string if passwords match', () => {
+    expect(confirmarPassword('abcd', 'abcd')).toBe('')
+  })
+})
+
+describe('mensajeRut', () => {
+  it('should return error if RUT is empty', () => {
+    expect(mensajeRut('')).toBe('El RUT es obligatorio.')
+  })
+
+  it('should return error if RUT is invalid', () => {
+    expect(mensajeRut('12.345.678-0')).toMatch(/no es válido/)
+  })
+
+  it('should return empty string if RUT is valid', () => {
+    expect(mensajeRut('12.345.678-5')).toBe('')
+  })
+})
+
+describe('validarTelefono', () => {
+  it('should accept valid Chilean phone formats', () => {
+    expect(validarTelefono('+569 12345678')).toBe(true)
+    expect(validarTelefono('+56912345678')).toBe(true)
+    expect(validarTelefono('9 12345678')).toBe(true)
+    expect(validarTelefono('912345678')).toBe(true)
+    expect(validarTelefono('123456789')).toBe(true)
+  })
+
+  it('should reject invalid phone formats', () => {
+    expect(validarTelefono('123')).toBe(false)
+    expect(validarTelefono('abc')).toBe(false)
+  })
+})
+
+describe('mensajeTelefono', () => {
+  it('should return error if phone is empty', () => {
+    expect(mensajeTelefono('')).toBe('El teléfono es obligatorio.')
+  })
+
+  it('should return error if phone is invalid', () => {
+    expect(mensajeTelefono('123')).toMatch(/no es válido/)
+  })
+
+  it('should return empty string if phone is valid', () => {
+    expect(mensajeTelefono('+569 12345678')).toBe('')
   })
 })

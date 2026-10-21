@@ -22,7 +22,21 @@ export default defineConfig({
         'node_modules/',
         'src/setupTests.js',
         'dist/',
+        // Configuración y entrypoint: no son lógica de la app
+        'vite.config.js',
+        'eslint.config.js',
+        'src/main.jsx',
+        // Los propios tests no se miden a sí mismos
+        'src/tests/**',
+        '**/*.test.*',
+        '**/*.spec.*',
       ],
+      thresholds: {
+        statements: 90,
+        branches: 85,
+        functions: 85,
+        lines: 90,
+      },
     },
   },
 })
