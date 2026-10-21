@@ -15,9 +15,6 @@ dist-ssr
 # Reportes de cobertura generados por vitest
 coverage/
 
-# Configuración local del agente
-.mimocode/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
